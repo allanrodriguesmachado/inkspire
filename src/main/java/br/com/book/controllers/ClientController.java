@@ -18,10 +18,9 @@ public class ClientController {
         view.createClient();
 
         ClientModel client = new ClientModel(
+                view.getId(),
                 view.getFirstName(),
-                view.getLastName(),
-                "re",
-                23);
+                view.getLastName());
 
         clients.add(client);
     }
