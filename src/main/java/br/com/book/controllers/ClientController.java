@@ -8,6 +8,7 @@ import java.util.*;
 public class ClientController {
     final private ClientView view;
     final private List<ClientModel> clients = new ArrayList<>();
+    private int nextId = 1;
 
     public ClientController(ClientView view) {
         this.view = view;
@@ -17,10 +18,13 @@ public class ClientController {
     {
         view.createClient();
 
+        String firstName = view.promptFirstName();
+        String lastName = view.promptLastName();
+
         ClientModel client = new ClientModel(
-                view.getId(),
-                view.getFirstName(),
-                view.getLastName());
+                this.nextId++,
+                firstName,
+                lastName);
 
         clients.add(client);
     }
