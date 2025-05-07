@@ -32,8 +32,6 @@ public class ClientView {
         viewMessage("Nome: " + client.firstName() + " " + client.lastName());
     }
 
-
-
     private void viewMessage(String message) {
         System.out.println(message);
     }

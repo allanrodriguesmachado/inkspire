@@ -16,17 +16,21 @@ public class ClientController {
 
     public void create()
     {
-        view.createClient();
+        try {
+            view.createClient();
 
-        String firstName = view.promptFirstName();
-        String lastName = view.promptLastName();
+            String firstName = view.promptFirstName();
+            String lastName = view.promptLastName();
 
-        ClientModel client = new ClientModel(
-                this.nextId++,
-                firstName,
-                lastName);
+            ClientModel client = new ClientModel(
+                    this.nextId++,
+                    firstName,
+                    lastName);
 
-        clients.add(client);
+            clients.add(client);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void list()
