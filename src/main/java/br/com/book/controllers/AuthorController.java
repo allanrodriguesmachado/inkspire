@@ -3,8 +3,7 @@ package br.com.book.controllers;
 import br.com.book.models.AuthorModel;
 import br.com.book.views.AuthorView;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AuthorController {
     final private AuthorView view;
@@ -21,10 +20,12 @@ public class AuthorController {
         view.createAuthor();
 
         String fullName = view.promptFullName();
+
         AuthorModel author = new AuthorModel(
                 this.nextId++,
                 fullName
         );
+
         authors.add(author);
     }
 
