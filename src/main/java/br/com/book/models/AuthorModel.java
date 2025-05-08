@@ -1,4 +1,4 @@
 package br.com.book.models;
 
-public class AuthorModel {
+public record AuthorModel(int id, String fullName) {
 }
